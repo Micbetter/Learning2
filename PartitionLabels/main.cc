@@ -2,7 +2,7 @@
  * @Author: renwen.wang renwen.wang@tusen.ai
  * @Date: 2024-02-22 23:18:22
  * @LastEditors: renwen.wang renwen.wang@tusen.ai
- * @LastEditTime: 2024-02-28 16:08:11
+ * @LastEditTime: 2024-02-28 16:35:59
  * @Description:
  *
  * Copyright (c) 2024 by Tusimple, All Rights Reserved.
@@ -32,7 +32,7 @@ class Solution {
     }
     vector<int> partition;
     int start = 0, end = 0;
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < s.size(); i++) {
       end = max(end, tmp[s[i]]);
       if (i == end) {
         partition.push_back(end - start + 1);
