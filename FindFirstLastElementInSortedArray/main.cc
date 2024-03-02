@@ -2,7 +2,7 @@
  * @Author: renwen.wang renwen.wang@tusen.ai
  * @Date: 2024-02-21 11:19:49
  * @LastEditors: renwen.wang renwen.wang@tusen.ai
- * @LastEditTime: 2024-02-27 23:00:11
+ * @LastEditTime: 2024-02-28 22:45:17
  * @Description:
  *
  * Copyright (c) 2024 by Tusimple, All Rights Reserved.
@@ -16,7 +16,22 @@
 
 using namespace std;
 
+int test1() {
+  cout << "test1" << endl;
+  return 1;
+}
+
+static int a = test1();
+
+int b = []() {
+  cout << "lambda 2" << endl;
+  return 2;
+}();
+
 class Solution {
+ private:
+  const int a = 1;
+
  public:
   int binarySearch(vector<int>& nums, int target, bool lower) {
     int left = 0, right = nums.size() - 1;
@@ -45,6 +60,7 @@ class Solution {
 };
 
 int main(int argc, char** argv) {
+  cout << "main" << endl;
   vector<int> test = {1, 2, 4, 4, 6};
   Solution s;
   s.searchRange(test, 4);
